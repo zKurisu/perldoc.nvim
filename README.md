@@ -1,10 +1,12 @@
 # perldoc.nvim
 
-A simple way to open perldoc in nvim.
+A simple way to open perldoc in nvim. Only support for functions not methodes.
 
 # Features
 
 It will open the `perldoc xxx::xxx` about the function under cursor on the right side of current window:
+
+![](./img/test.png)
 
 # Installation
 
