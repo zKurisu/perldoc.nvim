@@ -22,6 +22,7 @@
 -- 2. Use CvGV(\&func) function in Devel::Peek module to get where the function from
 -- 3. Return the module name
 vim.g.perldoc_keymap = { "n", "gh", ":lua Perldoc()<CR>" }
+vim.g.perldoc_install_path = os.getenv("HOME") .. '/.local/share/nvim/lazy/perldoc.nvim'
 
 if vim.bo.filetype == 'perl' or vim.bo.filetype == 'pl' then
   vim.keymap.set(vim.g.perldoc_keymap[1], vim.g.perldoc_keymap[2], vim.g.perldoc_keymap[3])
@@ -40,9 +41,10 @@ function Perldoc()
   local file_name = vim.fn.expand('%:p')
   local func_name = vim.fn.expand("<cword>")
 
-  local perl_script = "../perl/perldoc.pl"
+  local perl_script = vim.g.perldoc_install_path .. "/perl/perldoc.pl"
   local perl_args = { file_name, func_name }
   local module_name = RunPerl(perl_script, perl_args)
+  print(module_name)
   if not (module_name == 'main') then
     vim.cmd[[
       set splitright

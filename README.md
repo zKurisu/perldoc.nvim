@@ -12,7 +12,23 @@ You can also place the cursor on a module name to open `perldoc`.
 
 # Installation
 
-Just clone it!
+Support for `Lazy.nvim` to install:
+
+```lua
+{
+  "zKurisu/perldoc.nvim",
+  lazy = false,
+  config = function()
+    require('perldoc')
+  end
+}
+```
+
+For other ways, you can change the variable `vim.g.perldoc_install_path` to where the plugin is, the default value is:
+
+```lua
+vim.g.perldoc_install_path = os.getenv("HOME") .. '/.local/share/nvim/lazy/perldoc.nvim'
+```
 
 # Keymap
 
