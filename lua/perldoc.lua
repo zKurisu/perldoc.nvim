@@ -40,7 +40,7 @@ function Perldoc()
   local file_name = vim.fn.expand('%:p')
   local func_name = vim.fn.expand("<cword>")
 
-  local perl_script = "../../perl/perldoc.pl"
+  local perl_script = "../perl/perldoc.pl"
   local perl_args = { file_name, func_name }
   local module_name = RunPerl(perl_script, perl_args)
   if not (module_name == 'main') then
