@@ -8,6 +8,8 @@ It will open the `perldoc xxx::xxx` about the function under cursor on the right
 
 ![](./img/test.png)
 
+You can also place the cursor on a module name to open `perldoc`.
+
 # Installation
 
 Just clone it!
